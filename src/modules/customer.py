@@ -16,14 +16,14 @@ class Customer:
     def set_email(self, new_email):
         self.email = new_email
 
-    def validate_username(self, old_username, new_username):
+    def update_username(self, old_username, new_username):
         if old_username != self.username:
             return False
         else:
             self.set_username(new_username)
             return True
 
-    def validate_email(self, old_email, new_email):
+    def update_email(self, old_email, new_email):
         if old_email != self.email:
             return False
         else:
@@ -39,9 +39,10 @@ class Customer:
                 title_list = self.orders.values()
 
                 if title in title_list:
-                    print("Book already ordered.")
+                    print(f'Book already ordered: "{author}: {title}"')
                 else:
                     self.orders[author] = title
+                    print(f'Order success: "{author}: {title}"')
 
 
     def view_oders(self):
@@ -58,5 +59,4 @@ customer1.place_order(("George Orwell", "1984", "Fiction"))
 customer1.place_order(("George Orwell", "1984"))
 customer1.view_oders()
 
-customer1.place_order(("George Orwell", "1984"), ("John King", "How to be boss."))
-customer1.view_oders()
+customer1.place_order(("George Orwell", "1984"))
