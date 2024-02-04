@@ -1,4 +1,4 @@
-__all__ = ["customer", "book"]
+__all__ = ["Customer", "Book"]
 
 from .Customer import Customer
 from .Book import Book

@@ -2,22 +2,27 @@ import csv
 
 
 class Book:
-    titles = []
+    list_books = {}
 
-    def __init__(self, title, author, genre):
-        self.title = title
+    def __init__(self, author, title) -> None:
         self.author = author
-        self.genre = genre
-        Book.titles.append(self.title)
+        self.title = title
+        Book.list_books[author] = title
 
-    def write_books_in_csv(self):
-        with open('books.csv', 'a', newline='') as file:
-            writer = csv.writer(file)
+    def get_author(self):
+        return self.author
+    
+    def set_author(self, new_author):
+        self.author = new_author
 
-            if file.tell() == 0:
-                writer.writerow(["Title", "Author", "Genre"])
+    def get_title(self):
+        return self.title
+    
+    def set_title(self, new_title):
+        self.title = new_title
 
-            if self.title in Book.titles:
-                return print("Book is already in Library")
-            else:
-                writer.writerow([self.title, self.author, self.genre])
+    @classmethod
+    def get_books(cls):
+        for author, title in Book.list_books.items():
+            print(f"{author}: {title}")
+            
