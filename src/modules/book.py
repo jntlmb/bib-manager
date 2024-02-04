@@ -1,6 +1,3 @@
-import csv
-
-
 class Book:
     list_books = {}
 
@@ -22,7 +19,9 @@ class Book:
         self.title = new_title
 
     @classmethod
-    def get_books(cls):
-        for author, title in Book.list_books.items():
-            print(f"{author}: {title}")
-            
+    def view_books(cls):
+        if len(Book.list_books) == 0:
+            print("No Books Registered.")
+        else:
+            for author, title in Book.list_books.items():
+                print(f"{author}: {title}")
