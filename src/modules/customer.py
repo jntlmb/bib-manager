@@ -39,8 +39,4 @@ class Customer:
         else:
             for username, email in Customer.list_customer.items():
                 print(f"{username}: {email}")
-        
-
-customer1 = Customer("test_user", "test_email")
-customer2 = Customer("test_user1", "test_email1")
-Customer.view_customer()
+                
