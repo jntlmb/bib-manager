@@ -1,10 +1,10 @@
 class Book:
-    __list_books = {}
+    list_books = {}
 
     def __init__(self, author, title) -> None:
         self.author = author
         self.title = title
-        Book.__list_books[author] = title
+        Book.list_books[author] = title
 
     def get_author(self):
         return self.author
@@ -20,8 +20,8 @@ class Book:
 
     @classmethod
     def view_books(cls):
-        if len(Book.__list_books) == 0:
+        if len(Book.list_books) == 0:
             print("No Books Registered.")
         else:
-            for author, title in Book.__list_books.items():
+            for author, title in Book.list_books.items():
                 print(f"{author}: {title}")

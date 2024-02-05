@@ -1,4 +1,4 @@
-from modules import Book, Customer, Order
+from modules import *
 
 book1 = Book("john", "how to be boss")
 Book.view_books()

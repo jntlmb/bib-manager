@@ -39,4 +39,3 @@ class Customer:
         else:
             for username, email in Customer.list_customer.items():
                 print(f"{username}: {email}")
-                
